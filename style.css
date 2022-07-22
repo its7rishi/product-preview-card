@@ -1,7 +1,16 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
+.image-container {
+  background-image: url('./images/image-product-desktop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+
+.image-container img {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .image-container img {
+    display: block;
+  }
 }

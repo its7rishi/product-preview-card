@@ -12,16 +12,91 @@
     />
 
     <title>Frontend Mentor | Product preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            serif: ['Fraunces', 'serif'],
+          },
+          extend: {
+            colors: {
+              darkCyan: 'hsl(158, 36%, 37%)',
+              cream: 'hsl(30, 38%, 92%)',
+              darkGrayishBlue: 'hsl(228, 12%, 48%)',
+              veryDarkBlue: 'hsl(212, 21%, 14%)',
+              white: 'hsl(0, 0%, 100%)',
+            },
+          },
+        },
+      }
+    </script>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body style="width: 100vw; height: 100vh">
     <!-- Main Container -->
-    <div class="main-container">
-      <div class="product-container">
-        <div class="product-image"></div>
-        <div class="product-info"></div>
+    <div
+      class="w-full h-full flex flex-col items-center justify-center bg-cream space-y-6 mb-8"
+    >
+      <!-- Card Container -->
+      <div
+        class="flex flex-col items-center justify-center w-full h-full bg-white rounded-xl px-4 pt-6 md:flex-row md:w-1/2 md:h-96 md:px-0 md:pt-0 md:shadow-lg overflow-hidden"
+      >
+        <!-- Image Container -->
+        <div
+          class="w-full image-container mb-4 rounded-t-xl md:mb-0 md:w-1/2 md:h-full md:rounded-l-xl md:rounded-t-none"
+        >
+          <img
+            src="./images/image-product-mobile.jpg"
+            alt=""
+            class="w-full h-full rounded-t-xl md:d-hidden md:rounded-t-none"
+          />
+        </div>
+
+        <!-- Text Container -->
+        <div
+          class="flex flex-col justify-center space-y-3 px-3 w-full md:w-1/2 md:px-4"
+        >
+          <div>
+            <p
+              class="text-xs font-thin text-darkGrayishBlue font-sans tracking-widest"
+            >
+              PERFUME
+            </p>
+          </div>
+          <div class="mb-2 flex flex-col">
+            <h1 class="font-serif text-center text-3xl mb-3 text-veryDarkBlue">
+              Gabrielle Essence Eau De Parfum
+            </h1>
+            <p class="font-sans text-darkGrayishBlue text-[14px]">
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
+            </p>
+          </div>
+          <div>
+            <p class="text-3xl font-serif text-darkCyan">
+              <span class="mr-3">$149.99</span>
+              <span
+                class="text-[14px] font-sans line-through text-darkGrayishBlue"
+                >$169.99</span
+              >
+            </p>
+          </div>
+          <button
+            class="w-full p-2 bg-darkCyan font-sans text-white flex items-center justify-center rounded-lg focus:outline-none active:bg-veryDarkBlue"
+          >
+            <img src="./images/icon-cart.svg" alt="" / class="mr-2"> Add to Cart
+          </button>
+        </div>
       </div>
     </div>
 
